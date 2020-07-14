@@ -13,13 +13,22 @@ d) Mostrar la información calculada en el punto C
 using namespace std;
 #define N 100
 
-
-void mostrarEscuelas(int n, int m[], char esc[][N][N], char nom[][N])
+void cantar(int n, int m[], char esc[][N][N], char nom[][N])
 {
 	for(int i=0;i<n;i++)
 	{
-		cout<<"Facultad  "<<nom[i]<<" tiene "<<m[i]<<" shool\n";
+		cout<<"Ingresar nombre #"<<i+1<<": ";
+		fflush(stdin);
+		cin.getline(nom[i],N);
+		cout<<"Ingresar cantidad de de "<<nom[i]<<": ";
+		cin>>m[i];
+		for(int j=0;j<m[i];j++)
+		{
+			cout<<"Ingresela #"<<j+1<<": ";
+			fflush(stdin);
+			cin.getline(esc[i][j],N);
+		}
+		cout<<"------------------------------------------------\n";
 	}
 }
-
 
